@@ -86,7 +86,7 @@ const Footer = () => {
     <div className=" bg-rose-50 h-2 w-full flex flex-col items-center justify-center mt-4">
       <a
         className="  bg-rose-50  fixed bottom-2 right-2 backdrop-blur-md opacity-80 hover:opacity-95 border p-1 rounded border-rose-300"
-        href="https://github.com/Xeven777/valentine"
+        href="https://twitter.com/0xdeepak_eth"
         target="__blank"
       >
         Made with{" "}
