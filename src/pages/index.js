@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import { useState } from "react";
 import YesCard from "../components/YesCard";
+import TypewriterText from "@/components/TypeWriterText";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,39 +43,41 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-white overflow-hidden flex flex-col items-center justify-center pt-4 h-screen -mt-16 selection:bg-rose-600 selection:text-white text-zinc-900">
-      {yesPressed ? (
-        <YesCard />
-      ) : (
-        <>
-          <img
-            className="h-[230px] rounded-lg shadow-lg"
-            src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTF0YXAwaWNwZzNtd3luMXdsNXpxMjk2MG5pdTVydDhqeGl2bWpzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c76IJLufpNwSULPk77/giphy.gif"
-          />
-          <h1 className="text-4xl md:text-6xl my-4 text-center">
-            Hela will you be my Valentine?
-          </h1>
-          <div className="flex flex-wrap justify-center gap-2 items-center">
-            <button
-              className={`bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg mr-4`}
-              style={{ fontSize: yesButtonSize }}
-              onClick={() => setYesPressed(true)}
-            >
-              Yes
-            </button>
-            <button
-              onClick={handleNoClick}
-              className=" bg-rose-400 hover:bg-rose-600 rounded-lg text-white font-bold py-2 px-4"
-            >
-              {noCount === 0 ? "No" : getNoButtonText()}
-            </button>
-          </div>
-        </>
-      )}
-      <div className=" bg-rose-50 flex flex-col items-center justify-center mt-4">
-        <Footer />
+    <>
+      <div className="bg-white overflow-hidden flex flex-col items-center justify-center pt-4 h-screen -mt-16 selection:bg-rose-600 selection:text-white text-zinc-900">
+        {yesPressed ? (
+          <YesCard />
+        ) : (
+          <>
+            <img
+              className="h-[230px] rounded-lg shadow-lg"
+              src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTF0YXAwaWNwZzNtd3luMXdsNXpxMjk2MG5pdTVydDhqeGl2bWpzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c76IJLufpNwSULPk77/giphy.gif"
+            />
+
+            <TypewriterText text={"Hela, will you be my Valentine?"} />
+
+            <div className="flex flex-wrap justify-center gap-2 items-center">
+              <button
+                className={`bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg mr-4`}
+                style={{ fontSize: yesButtonSize }}
+                onClick={() => setYesPressed(true)}
+              >
+                Yes
+              </button>
+              <button
+                onClick={handleNoClick}
+                className=" bg-rose-400 hover:bg-rose-600 rounded-lg text-white font-bold py-2 px-4"
+              >
+                {noCount === 0 ? "No" : getNoButtonText()}
+              </button>
+            </div>
+          </>
+        )}
+        <div className=" bg-rose-50 flex flex-col items-center justify-center mt-4">
+          <Footer />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -88,7 +92,8 @@ const Footer = () => {
         Made with{" "}
         <span role="img" aria-label="heart">
           ❤️
-        </span>
+        </span>{" "}
+        by Deepak
       </a>
     </div>
   );
