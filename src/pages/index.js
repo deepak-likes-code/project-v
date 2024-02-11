@@ -44,7 +44,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="bg-white overflow-hidden flex flex-col items-center justify-center pt-4 h-screen -mt-16 selection:bg-rose-600 selection:text-white text-zinc-900">
+      <div className="bg-rose-50 overflow-hidden flex flex-col items-center justify-center pt-4 h-screen -mt-16 selection:bg-rose-600 selection:text-white text-zinc-900">
         {yesPressed ? (
           <YesCard />
         ) : (

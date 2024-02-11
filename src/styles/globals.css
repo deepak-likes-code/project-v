@@ -4,34 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes typewriter {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-.typewriter h1 {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: 0.15em; /* Adjust as needed */
-  animation: typewriter 3.5s steps(40, end) 1s 1 normal both,
-    blinkTextCursor 500ms steps(40, end) infinite;
-}
-
-@keyframes blinkTextCursor {
-  from {
-    border-right-color: orange;
-  }
-  to {
-    border-right-color: transparent;
-  }
-}
-
 body {
   font-family: "Mooli", sans-serif;
 }
