@@ -3,7 +3,7 @@ import { useState } from "react";
 import YesCard from "../components/YesCard";
 import TypewriterText from "@/components/TypeWriterText";
 import Footer from "@/components/Footer";
-
+import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -49,8 +49,8 @@ export default function Home() {
         ) : (
           <>
             <img
-              className="h-[230px] rounded-lg shadow-lg"
-              src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTF0YXAwaWNwZzNtd3luMXdsNXpxMjk2MG5pdTVydDhqeGl2bWpzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c76IJLufpNwSULPk77/giphy.gif"
+              className="h-[230px] rounded-lg "
+              src="https://media.tenor.com/0tkCPVxDt1kAAAAi/dudu.gif"
             />
 
             <TypewriterText text={"Hela, will you be my Valentine?"} />
