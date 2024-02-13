@@ -1,11 +1,61 @@
 @import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+
+.romantic-font {
+  font-family: "Dancing Script", cursive;
+}
+
+.heart-beat {
+  animation: heartBeat 1.5s ease-in-out infinite both;
+}
+
+@keyframes heartBeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* styles/global.css */
+body {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 228 230 / var(--tw-bg-opacity));
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+.shake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
 body {
   font-family: "Mooli", sans-serif;
+  background-color: "bg-rose-100";
 }
 
 @layer utilities {

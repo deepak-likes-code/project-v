@@ -1,12 +1,19 @@
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import CountdownTimer from "./CountDownTimer";
 
 const YesCard = () => {
   const router = useRouter();
+  const [timerExpired, setTimerExpired] = useState(false);
 
   const handleClick = () => {
-    alert("I love you so much Hela!");
-    router.push("/photos");
+    if (timerExpired) {
+      router.push("/valentines-card");
+    } else {
+    }
+
+    showNotAvailableMessage();
   };
 
   const showNotAvailableMessage = () => {
@@ -25,9 +32,13 @@ const YesCard = () => {
     });
   };
 
+  const handleTimeExpire = () => {
+    setTimerExpired(true);
+  };
+
   return (
     <div className="flex flex-col items-center justify-center">
-      <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" />
+      <img src="https://media.tenor.com/tLsYTSNv11IAAAAi/tkthao219-bubududu.gif" />
 
       <div className=" px-4  text-center text-4xl md:text-6xl font-bold my-10">
         I love you so much Hela ❤️ 😘
@@ -35,12 +46,16 @@ const YesCard = () => {
 
       <div className="flex flex-wrap justify-center gap-2 items-center">
         <button
-          onClick={showNotAvailableMessage}
+          onClick={handleClick}
           className=" bg-rose-300 hover:bg-rose-600 rounded-lg text-white font-bold py-2 px-4"
         >
-          Here is a little something for you!
+          Click me!
         </button>
       </div>
+      <CountdownTimer
+        initialTimeInSeconds={60}
+        onTimeExpire={handleTimeExpire}
+      />
     </div>
   );
 };
