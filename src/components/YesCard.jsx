@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { toast } from "react-toastify";
 
 const YesCard = () => {
   const router = useRouter();
@@ -6,6 +7,22 @@ const YesCard = () => {
   const handleClick = () => {
     alert("I love you so much Hela!");
     router.push("/photos");
+  };
+
+  const showNotAvailableMessage = () => {
+    toast("Gotta wait till tomorrow 😉", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      style: {
+        backgroundColor: "#be185d",
+        color: "white",
+      },
+    });
   };
 
   return (
@@ -18,7 +35,7 @@ const YesCard = () => {
 
       <div className="flex flex-wrap justify-center gap-2 items-center">
         <button
-          onClick={handleClick}
+          onClick={showNotAvailableMessage}
           className=" bg-rose-300 hover:bg-rose-600 rounded-lg text-white font-bold py-2 px-4"
         >
           Here is a little something for you!

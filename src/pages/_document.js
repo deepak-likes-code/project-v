@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>Will you be my Valentine?</title>
         <meta
           name="description"
           content="A simple valentine's day card to ask your loved one to be your valentine"
