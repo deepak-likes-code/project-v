@@ -61,11 +61,11 @@ const ImageCard = ({
     <div
       onClick={flipCard}
       ref={cardRef}
-      className={`relative overflow-hidden rounded-lg flex flex-col items-center justify-center  shadow-lg hover:shadow-xl md:w-96 w-72 md:h-96 h-72 m-4 transform transition duration-500 ease-in-out hover:scale-105 cursor-pointer${
+      className={`relative overflow-hidden rounded-lg flex flex-col items-center justify-center shadow-lg hover:shadow-xl md:w-96 w-72 md:h-96 h-72 m-4 transform transition duration-500 ease-in-out hover:scale-105 cursor-pointer ${
         isCorrect
           ? "border-4 border-rose-50"
           : shake
-          ? "border-4 border-rose-500 shake"
+          ? "border-4 border-red-500 shake"
           : "border-4 border-rose-300"
       } bg-rose-200`}
     >
@@ -99,7 +99,7 @@ const ImageCard = ({
             type="text"
             value={answer}
             onChange={handleAnswerChange}
-            onClick={stopPropagation} // Added stopPropagation here as well
+            onClick={stopPropagation}
             className="text-center mb-4 p-2 border-2 border-gray-300 rounded"
             placeholder="Your answer"
           />
