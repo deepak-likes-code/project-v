@@ -1,43 +1,88 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import ImageCard from "@/components/Image";
 
 const PhotoBooth = () => {
-  const images = [
+  const cardsData = [
     {
-      src: "https://via.placeholder.com/150",
-      alt: "Image 1",
-      subtext: "Subtext 1",
+      src: "/imgs/official-min.jpg",
+      alt: "Two cuties make it official 👩‍❤️‍👨",
+      subtext: "Two cuties make it official 👩‍❤️‍👨",
+      question: "Where did we have dinner after making it official?",
+      correctAnswer: "Misu",
     },
     {
-      src: "https://via.placeholder.com/150",
-      alt: "Image 2",
-      subtext: "Subtext 2",
+      src: "/imgs/saree-min.jpg",
+      alt: "Trad Gworl 💃",
+      subtext: "Trad Gworl 💃",
+      question: "From where did I get this saree that you are wearing?",
+      correctAnswer: "Udaipur",
     },
     {
-      src: "https://via.placeholder.com/150",
-      alt: "Image 3",
-      subtext: "Subtext 3",
+      src: "/imgs/flowers-min.jpg",
+      alt: "Flower Day",
+      subtext: "🌸 🌸 🌸",
+      question: "Scientific name of this flower?",
+      correctAnswer: "Tabibuea Rosea",
     },
-    // Add more images as needed
+    {
+      src: "/imgs/hotpot-min.jpeg",
+      alt: "Hotpot",
+      subtext: "Hotpot 🍲",
+      question: "The restaurant where we had hotpot for the first time?",
+      correctAnswer: "Haidilao",
+    },
+    {
+      src: "/imgs/mumbai-min.jpg",
+      alt: "Mumbai",
+      subtext: "The day when I fell in love with you 💖",
+      question: "Where did we take this picture at?",
+      correctAnswer: "Sassoon Docks",
+    },
+    {
+      src: "/imgs/nose-min.jpeg",
+      alt: "Piercing Day",
+      subtext: "Tough one 🤔",
+      question: "You got this nose peircing after having drinks at?",
+      correctAnswer: "Bon Sante",
+    },
   ];
 
+  // State to track correctness of all cards
+  const [correctAnswers, setCorrectAnswers] = useState(
+    Array(cardsData.length).fill(false)
+  );
+
+  // Callback function to update state based on card answer
+  const handleCardAnswer = (index, isCorrect) => {
+    setCorrectAnswers((prev) => {
+      const updated = [...prev];
+      updated[index] = isCorrect;
+      return updated;
+    });
+  };
+
+  // Check if all answers are correct to show the continue button
+  const allCorrect = correctAnswers.every((status) => status);
+
   return (
-    <div className="bg-gray-100 p-8">
-      <h1 className="text-6xl font-semibold text-center mb-6">📸 ✨</h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {images.map((image, index) => (
-          <div
+    <div className=" min-h-screen p-8 flex flex-col justify-center items-center">
+      <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center px-2">
+        {cardsData.map((image, index) => (
+          <ImageCard
             key={index}
-            className="overflow-hidden rounded-lg shadow-lg bg-white"
-          >
-            <img
-              src={image.src}
-              alt={image.alt}
-              className="w-full h-auto transform transition duration-500 hover:scale-110"
-            />
-            <p className="text-center text-xl py-2">{image.subtext}</p>
-          </div>
+            src={image.src}
+            correctAnswer={image.correctAnswer}
+            question={image.question}
+            subtext={image.subtext}
+            onAnswerCheck={(isCorrect) => handleCardAnswer(index, isCorrect)}
+          />
         ))}
-      </div>
+      </div>{" "}
+      {allCorrect && (
+        <button className="mt-4 px-4 w-1/5 py-2 bg-rose-500 text-white rounded">
+          Yaaaaay!!!! You Did It 🎉
+        </button>
+      )}
     </div>
   );
 };

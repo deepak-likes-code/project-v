@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const TypewriterText = ({ text, speed = 90 }) => {
+const TypewriterText = ({ font, text, speed = 90 }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
 
@@ -16,7 +16,9 @@ const TypewriterText = ({ text, speed = 90 }) => {
   }, [index, text, speed]);
 
   return (
-    <h1 className="text-4xl md:text-6xl my-4 text-center">{displayedText}</h1>
+    <h1 className={`${font} text-4xl md:text-6xl my-4 text-center`}>
+      {displayedText}
+    </h1>
   );
 };
 
