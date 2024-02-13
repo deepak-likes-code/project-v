@@ -52,14 +52,14 @@ const ValentinesCard = () => {
   return (
     <>
       <Head>
-        <title>Valentine's Day Card</title>
+        <title>Valentines Day Card</title>
       </Head>
       <div className="min-h-screen flex flex-col items-center justify-center p-4">
         <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 md:p-12 min-w-2xl shadow-2xl border border-rose-200">
           {!messageRevealed && (
             <div className="flex flex-col justify-center items-center">
               <h1 className="text-4xl md:text-5xl font-bold text-rose-500 text-center mb-4">
-                Happy Valentine's Day Bubu 💖
+                Happy Valentines Day Bubu 💖
               </h1>
               <RomanticTypewriterText
                 text="Ily 💖 Through thick and thin and oil"
@@ -117,7 +117,7 @@ const ValentinesCard = () => {
                 5:00 PM onwards
               </p>
               <p className="text-lg md:text-xl text-gray-700 font-semibold">
-                I'll be waiting. 💘
+                {"I'll be waiting. 💘"}
               </p>
             </div>
           )}
