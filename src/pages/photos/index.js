@@ -50,7 +50,8 @@ const PhotoBooth = () => {
       src: "/imgs/nose-min.jpeg",
       alt: "Piercing Day",
       subtext: "Tough one 🤔",
-      question: "You got this nose peircing after having drinks at?",
+      question:
+        "You got this nose peircing after having drinks at? (Hint: It means Good Health in French)",
       correctAnswer: "Bon Sante",
     },
   ];
