@@ -30,7 +30,7 @@ const PhotoBooth = () => {
       alt: "Flower Day",
       subtext: "🌸 🌸 🌸",
       question: "Scientific name of this flower?",
-      correctAnswer: "Tabibuea Rosea",
+      correctAnswer: "Tabibuia Rosea",
     },
     {
       src: "/imgs/hotpot-min.jpeg",
