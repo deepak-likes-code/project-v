@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import ImageCard from "@/components/Image";
 
 const PhotoBooth = () => {
+  const router = useRouter();
+
+  // Function to handle the continue button click
+  const handleClick = () => {
+    router.push("/chat");
+  };
+
   const cardsData = [
     {
       src: "/imgs/official-min.jpg",
@@ -79,7 +87,10 @@ const PhotoBooth = () => {
         ))}
       </div>{" "}
       {allCorrect && (
-        <button className="mt-4 px-4 w-1/5 py-2 bg-rose-500 text-white rounded">
+        <button
+          onClick={handleClick}
+          className="mt-4 px-4 w-1/5 py-2 bg-rose-500 text-white rounded hover:bg-rose-600 font-bold hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+        >
           Yaaaaay!!!! You Did It 🎉
         </button>
       )}
