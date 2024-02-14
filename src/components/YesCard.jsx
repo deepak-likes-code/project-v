@@ -11,13 +11,20 @@ const YesCard = () => {
     if (timerExpired) {
       router.push("/valentines-card");
     } else {
+      showNotAvailableMessage();
     }
+  };
 
-    showNotAvailableMessage();
+  const handleClickGift = () => {
+    if (timerExpired) {
+      router.push("/photos");
+    } else {
+      showNotAvailableMessage();
+    }
   };
 
   const showNotAvailableMessage = () => {
-    toast("Gotta wait till tomorrow 😉", {
+    toast("Have some patience baby gworl 😉", {
       position: "top-center",
       autoClose: 2000,
       hideProgressBar: false,
@@ -49,11 +56,17 @@ const YesCard = () => {
           onClick={handleClick}
           className=" bg-rose-300 hover:bg-rose-600 rounded-lg text-white font-bold py-2 px-4"
         >
-          Click me!
+          Invitation 💌
+        </button>
+        <button
+          onClick={handleClickGift}
+          className=" bg-rose-300 hover:bg-rose-600 rounded-lg text-white font-bold py-2 px-4"
+        >
+          Claim gift 🎁
         </button>
       </div>
       <CountdownTimer
-        initialTimeInSeconds={60}
+        initialTimeInSeconds={10}
         onTimeExpire={handleTimeExpire}
       />
     </div>

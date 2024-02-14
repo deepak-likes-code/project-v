@@ -24,6 +24,21 @@
 @tailwind utilities;
 
 /* styles/global.css */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.thinking-emoji {
+  display: inline-block;
+  animation: spin 2s linear infinite;
+}
+
 body {
   --tw-bg-opacity: 1;
   background-color: rgb(255 228 230 / var(--tw-bg-opacity));
