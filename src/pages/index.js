@@ -5,6 +5,7 @@ import TypewriterText from "@/components/TypeWriterText";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
+import ComicBookViewer from "@/components/ComicBookViewer";
 
 export default function Home() {
   const [noCount, setNoCount] = useState(0);
@@ -48,15 +49,15 @@ export default function Home() {
           <YesCard />
         ) : (
           <>
-            <img
+            {/* <img
               className="h-[230px] rounded-lg "
               src="https://media.tenor.com/0tkCPVxDt1kAAAAi/dudu.gif"
             />
 
-            <TypewriterText text={"Hela, will you be my Valentine?"} />
+            <TypewriterText text={"Hela, will you be my Valentine?"} /> */}
 
             <div className="flex flex-wrap justify-center gap-2 items-center">
-              <button
+              {/* <button
                 className={`bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg mr-4`}
                 style={{ fontSize: yesButtonSize }}
                 onClick={() => setYesPressed(true)}
@@ -68,7 +69,10 @@ export default function Home() {
                 className=" bg-rose-400 hover:bg-rose-600 rounded-lg text-white font-bold py-2 px-4"
               >
                 {noCount === 0 ? "No" : getNoButtonText()}
-              </button>
+              </button> */}
+              <div className="overflow-y-auto mt-20">
+                <ComicBookViewer />
+              </div>
             </div>
           </>
         )}
