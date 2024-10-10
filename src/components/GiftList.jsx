@@ -26,7 +26,9 @@ const GiftPresentation = () => {
               <h3 className="text-xl font-semibold text-center mb-2">
                 {gift.name}
               </h3>
-              <p className="text-sm text-center italic">"{gift.note}"</p>
+              <p className="text-sm text-center italic">
+                &ldquo;{gift.note}&rdquo;
+              </p>
             </div>
             {index >= 4 && (
               <div className="absolute inset-0 flex items-center justify-center">
